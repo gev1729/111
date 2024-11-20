@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Movie Posters</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: white;
+            text-align: center;
+        }
+        #poster {
+            width: 80%;
+            height: auto;
+            margin-top: 20px;
+        }
+        select {
+            font-size: 1.2em;
+            margin: 20px;
+            padding: 10px;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Choose a Movie Poster</h1>
+    
+    <label for="movie">Choose a Movie:</label>
+    <select id="movie">
+        <option value="https://via.placeholder.com/800x600.png?text=Movie+1">Movie 1</option>
+        <option value="https://via.placeholder.com/800x600.png?text=Movie+2">Movie 2</option>
+        <option value="https://via.placeholder.com/800x600.png?text=Movie+3">Movie 3</option>
+    </select>
+    
+    <img id="poster" src="https://via.placeholder.com/800x600.png?text=Movie+1" alt="Movie Poster">
+
+    <script>
+        const movieSelect = document.getElementById('movie');
+        const poster = document.getElementById('poster');
+
+        movieSelect.addEventListener('change', function () {
+            poster.src = movieSelect.value;
+        });
+    </script>
+</body>
+</html>
